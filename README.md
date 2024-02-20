@@ -6,22 +6,32 @@ These hooks are reusable pieces of logic that encapsulate common patterns, makin
 ## Hooks Included
 
 ### [useArray](./src/Hooks/useArray.ts)
+
 Provides utilities for managing arrays in React state.
 
 ### [useMediaQuery](./src/Hooks/useMediaQuery.ts)
+
 Easily detect changes in the viewport size and tracking changes to a media query.
 
 ### [useTimeout](./src/Hooks/useTimeout.ts)
+
 Enables you to create and manage timeouts in React components.
 
 ### [useDebounce](./src/Hooks/useDebounce.ts)
+
 Delaying the execution of a callback function.
 
 ### [useToggle](./src/Hooks/useToggle.ts)
+
 Simplifies the management of boolean state toggles.
 
 ### [useStorage](./src/Hooks/useStorage.ts)
+
 Allows you to store and retrieve stateful values in the browser's local storage or session storage.
+
+### [useInput](./src/Hooks/useInput.ts)
+
+Manages the state of an input field, including validation and focus tracking.
 
 ## Usage
 
@@ -53,6 +63,16 @@ function MyComponent() {
 
   // Example usage of useStorage
   const [storedValue, setStoredValue, removeStoredValue] = useLocalStorage<string>(key1, initialValue);
+
+  // Example usage of useInput
+  const {
+    value: inputValue,
+    focus: inputFocus,
+    onChange: handleInputChange,
+    onBlur: handleInputBlur,
+    onFocus: handleInputFocus,
+    hasError: inputHasError,
+  } = useInput((value: string) => value.trim() !== '');
 
   return (
     // Your component JSX here...
