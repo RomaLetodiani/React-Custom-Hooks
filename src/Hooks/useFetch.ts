@@ -13,14 +13,13 @@ const DEFAULT_OPTIONS = {
  */
 export default function useFetch(url: string, options: RequestInit = {}, dependencies: any[] = []) {
   // Using the useAsync hook to handle asynchronous operations
-  return useAsync(() => {
+  return useAsync(async () => {
     // Making the fetch call
-    return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((res) => {
-      // Checking if the response is OK
-      if (res.ok) return res.json();
-      // Handling non-OK response
-      return res.json().then((json) => Promise.reject(json));
-    });
+    const res = await fetch(url, { ...DEFAULT_OPTIONS, ...options });
+    // Checking if the response is OK
+    if (res.ok) return res.json();
+    const json = await res.json();
+    return await Promise.reject(json);
   }, dependencies);
 }
 
