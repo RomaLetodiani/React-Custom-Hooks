@@ -62,6 +62,26 @@ Detects element visibility on the screen using the Intersection Observer API.
 
 Facilitates making fetch requests with customizable options, handling loading state, error handling, and data retrieval.
 
+### [useClickOutside](./src/Hooks/useClickOutside.ts)
+
+Calls a function when clicked outside the specified element.
+
+### [useClickInside](./src/Hooks/useClickInside.ts)
+
+Calls a function when clicked inside the specified element.
+
+### [useHover](./src/Hooks/useHover.ts)
+
+Tracks whether the specified element is hovered or not
+
+### [useMouseEnter](./src/Hooks/useMouseEnter.ts)
+
+Calls a function when mouse enters the specified element.
+
+### [useMouseLeave](./src/Hooks/useMouseLeave.ts)
+
+Calls a function when mouse leaves the specified element.
+
 ## Usage
 
 ```typescript
@@ -135,6 +155,21 @@ function MyComponent() {
   // Example usage of useFetch
   const apiURL = 'https://api.example.com/data'; // Replace with your API URL
   const { data, isLoading, error } = useFetch(apiURL);
+
+  // Example usage of useClickOutside
+  useClickOutside(containerRef, handleClickOutside);
+
+  // Example usage of useClickInside
+  useClickInside(containerRef, handleClickInside);
+
+  // Example usage of useHover
+  const isHovered = useHover(containerRef);
+
+  // Example usage of useMouseEnter
+  useMouseEnter(containerRef, handleMouseEnter);
+
+  // Example usage of useMouseLeave
+  useMouseLeave(containerRef, handleMouseLeave);
 
   return (
     // Your component JSX here...
