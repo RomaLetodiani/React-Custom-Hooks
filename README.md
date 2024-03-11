@@ -82,6 +82,26 @@ Calls a function when mouse enters the specified element.
 
 Calls a function when mouse leaves the specified element.
 
+### [useIdle](./src/Hooks/useIdle.ts)
+
+Tracks the duration in milliseconds after which the user is considered idle
+
+### [useNetworkStatus](./src/Hooks/useNetworkStatus.ts)
+
+Monitors the network status of the user's device
+
+### [useClipboard](./src/Hooks/useClipboard.ts)
+
+Copying text to the clipboard
+
+### [useScrollPosition](./src/Hooks/useScrollPosition.ts)
+
+Tracks the scroll position of the window or a specified element
+
+### [useKeyPress](./src/Hooks/useKeyPress.ts)
+
+Detects key presses within current tab
+
 ## Usage
 
 ```typescript
@@ -170,6 +190,22 @@ function MyComponent() {
 
   // Example usage of useMouseLeave
   useMouseLeave(containerRef, handleMouseLeave);
+
+  // Example usage of useIdle
+  const isIdle = useIdle(20000);
+
+  // Example usage of useNetworkStatus
+  const isOnline = useNetworkStatus()
+
+  // Example usage of useClipboard
+  const [copyToClipboard, isCopied] = useClipboard();
+
+  // Example usage of useScrollPosition
+  const scrollPosition = useScrollPosition(); // Object
+  const {x, y} = useScrollPosition() // Object Destructuring
+
+  // Example usage of useKeyPress
+  const isKeyPressed = useKeyPress();
 
   return (
     // Your component JSX here...
