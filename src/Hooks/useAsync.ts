@@ -6,7 +6,7 @@ interface AsyncState<T> {
   value?: T;
 }
 
-export default function useAsync<T>(callback: () => Promise<T>, dependencies: any[] = []): AsyncState<T> {
+const useAsync = <T>(callback: () => Promise<T>, dependencies: any[] = []): AsyncState<T> => {
   const [asyncState, setAsyncState] = useState<AsyncState<T>>({
     loading: true,
     error: undefined,
@@ -42,7 +42,9 @@ export default function useAsync<T>(callback: () => Promise<T>, dependencies: an
   }, [callbackMemoized]);
 
   return asyncState;
-}
+};
+
+export default useAsync;
 
 // Example usage
 

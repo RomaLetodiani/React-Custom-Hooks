@@ -6,7 +6,7 @@ import { useEffect, useState, RefObject } from 'react';
  * @param rootMargin The margin around the root (viewport) within which to trigger visibility.
  * @returns A boolean indicating whether the observed element is visible in the viewport.
  */
-export default function useOnScreen(ref: RefObject<Element>, rootMargin: string = '0px'): boolean {
+const useOnScreen = (ref: RefObject<Element>, rootMargin: string = '0px'): boolean => {
   // Initialize state to track visibility
   const [isVisible, setIsVisible] = useState(false);
 
@@ -28,7 +28,9 @@ export default function useOnScreen(ref: RefObject<Element>, rootMargin: string 
   }, [ref, rootMargin]);
 
   return isVisible;
-}
+};
+
+export default useOnScreen;
 
 // Example usage
 

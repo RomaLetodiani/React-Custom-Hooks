@@ -6,7 +6,7 @@ import useAsync from './useAsync'; // Import the useAsync hook
  * @param apiUrl The URL of the API endpoint to fetch data from.
  * @returns An object containing the fetched data, loading state, and error.
  */
-function useAsyncAPI(apiUrl: string) {
+const useAsyncAPI = (apiUrl: string) => {
   // Use the useAsync hook to handle asynchronous operations
   const {
     loading,
@@ -21,7 +21,7 @@ function useAsyncAPI(apiUrl: string) {
 
   // Return the data, loading state, and error
   return { data, isLoading: loading, error };
-}
+};
 
 export default useAsyncAPI;
 

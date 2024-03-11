@@ -11,7 +11,7 @@ const DEFAULT_OPTIONS = {
  * @param dependencies The dependencies that trigger the fetch request.
  * @returns An object containing the fetched data, loading state, and error.
  */
-export default function useFetch(url: string, options: RequestInit = {}, dependencies: any[] = []) {
+const useFetch = (url: string, options: RequestInit = {}, dependencies: any[] = []) => {
   // Using the useAsync hook to handle asynchronous operations
   return useAsync(async () => {
     // Making the fetch call
@@ -21,7 +21,9 @@ export default function useFetch(url: string, options: RequestInit = {}, depende
     const json = await res.json();
     return await Promise.reject(json);
   }, dependencies);
-}
+};
+
+export default useFetch;
 
 // Example usage
 // const apiUrl = 'https://api.example.com/data'; // Replace with your API URL

@@ -19,7 +19,7 @@ interface CountState {
  * @param initialCount The initial value for the count state (default is 0).
  * @returns An object containing the count state and actions to manipulate it.
  */
-function useCount(initialCount: number = 0): CountState {
+const useCount = (initialCount: number = 0): CountState => {
   // Define the count state using useState hook
   const [count, setCount] = useState<number>(initialCount);
 
@@ -45,7 +45,7 @@ function useCount(initialCount: number = 0): CountState {
     decrement,
     reset,
   };
-}
+};
 
 export default useCount;
 

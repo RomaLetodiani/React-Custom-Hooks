@@ -6,7 +6,7 @@ import axios from 'axios'; // Assuming you're using Axios for API calls
  * @param apiUrl The URL of the API endpoint to fetch data from.
  * @returns An object containing the fetched data, loading state, and error.
  */
-function useAPI(apiUrl: string) {
+const useAPI = (apiUrl: string) => {
   // Initialize state variables
   const [data, setData] = useState<any>(null); // Adjust the type based on the expected data structure
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -34,7 +34,7 @@ function useAPI(apiUrl: string) {
 
   // Return the data, loading state, and error
   return { data, isLoading, error };
-}
+};
 
 export default useAPI;
 
