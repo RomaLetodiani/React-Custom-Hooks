@@ -102,6 +102,14 @@ Tracks the scroll position of the window or a specified element
 
 Detects key presses within current tab
 
+### [useCountDownTimer](./src/Hooks/useCountDownTimer.ts)
+
+Provides functionality for a countdown timer.
+
+### [useInterval](./src/Hooks/useInterval.ts)
+
+Invokes a function when a specified interval ends.
+
 ## Usage
 
 ```typescript
@@ -206,6 +214,12 @@ function MyComponent() {
 
   // Example usage of useKeyPress
   const isKeyPressed = useKeyPress();
+
+  // Example usage of useCountDownTimer
+  const { seconds, isRunning, startTimer, resetTimer, pauseTimer } = useCountdownTimer(StartSeconds);
+
+  // Example usage of useInterval
+  useInterval(callback, delay)
 
   return (
     // Your component JSX here...
