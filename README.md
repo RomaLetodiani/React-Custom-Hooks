@@ -110,6 +110,14 @@ Provides functionality for a countdown timer.
 
 Invokes a function when a specified interval ends.
 
+### [useLongPressDetection](./src/Hooks/useLongPressDetection.ts)
+
+Detects Long key presses of specific elements
+
+### [useTimer](./src/Hooks/useTimer.ts)
+
+Provides functionality for a timer.
+
 ## Usage
 
 ```typescript
@@ -220,6 +228,12 @@ function MyComponent() {
 
   // Example usage of useInterval
   useInterval(callback, delay)
+
+  // Example usage of use useLongPressDetection
+  const isLongPressed = useLongPressDetection(YourREF, YourDuration)
+
+  // Example usage of useTimer
+  const { seconds, isRunning, startTimer, resetTimer, pauseTimer } = useTimer();
 
   return (
     // Your component JSX here...
