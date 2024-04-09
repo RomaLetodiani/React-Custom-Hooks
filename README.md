@@ -118,6 +118,10 @@ Detects Long key presses of specific elements
 
 Provides functionality for a timer.
 
+### [usePrevious](./src/Hooks/usePrevious.ts)
+
+Provides previous value of a specified state
+
 ## Usage
 
 ```typescript
@@ -234,6 +238,9 @@ function MyComponent() {
 
   // Example usage of useTimer
   const { seconds, isRunning, startTimer, resetTimer, pauseTimer } = useTimer();
+
+  // Example usage of usePrevious
+  const prevState = usePrevious(state);
 
   return (
     // Your component JSX here...
