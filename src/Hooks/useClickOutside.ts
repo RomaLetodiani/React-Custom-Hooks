@@ -10,7 +10,6 @@ const useClickOutside = (elementRef: MutableRefObject<HTMLElement | null>, callb
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      event.preventDefault();
       if (elementRef.current && !elementRef.current.contains(event.target as Node)) {
         callbackRef.current();
       }
