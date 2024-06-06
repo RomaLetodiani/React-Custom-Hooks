@@ -11,7 +11,6 @@ const useClickInside = (elementRef: MutableRefObject<HTMLElement | null>, callba
 
   useEffect(() => {
     const handleClickInside = (event: MouseEvent) => {
-      event.preventDefault();
       if (elementRef.current && event.target instanceof Node && elementRef.current.contains(event.target)) {
         callbackRef.current();
       }
